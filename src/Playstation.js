@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useCounter } from "./hooks/useCounter";
 // Rerender
 // 1. state change
 // 2. parent rerender
@@ -9,16 +10,7 @@ import React, { useState } from "react";
 // TODO hook use rules
 
 export const Playstation = () => {
-  const [counter, setCounter] = useState(0);
-
-  const inc = () => {
-    setCounter((ctr) => ctr + 1);
-    // console.log(counter);
-  };
-
-  const dec = () => {
-    setCounter((ctr) => ctr - 1);
-  };
+  const {inc, dec, counter} = useCounter(1);
 
   return (
     <>
