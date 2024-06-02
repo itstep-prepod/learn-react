@@ -3,8 +3,6 @@ import { Playstation } from "./Playstation";
 import { Eggs } from "./Eggs";
 import { Ground } from "./Ground";
 
-// TODO input value two way binding
-
 export const App = () => {
   const [shouldShowText, setShouldShowText] = useState(false);
 
