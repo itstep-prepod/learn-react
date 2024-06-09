@@ -11,18 +11,18 @@ export const App = () => {
         // TODO дописать логику удаления, и укоротить код
         setPersons((prevPersons) => {
             return prevPersons.filter((person) => {
-                if (person.id !== personId) {
-                    return true;
-                } else {
-                    return false;
-                }
+                person.id !== personId ? true : false
             });
         });
+        if (setPersons === false) {
+          data.splice(personId,1)  
+        }
     };
+  
 
     return <>
         <div>hello world!</div>
         {/* <CardItem name={name} age={age} phone={phone} /> */}
-        { persons.map((person) => <CardItem {...person} key={person.id} />) }
+        { persons.map((person) => <CardItem {...person} key={person.id} onDeletePerson={onDeletePerson} />) }
     </>
 };
