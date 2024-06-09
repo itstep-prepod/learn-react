@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from "react"
-
-export const CardItem = ({name, age, phone}) => {
-   
-    return (
-         <div>
-            <h2>{name}</h2>
-            <p>{age}</p>
-            <p>{phone}</p>
-         </div>
-    )
-}
-=======
 import React from "react";
 
 
@@ -27,4 +13,3 @@ export const CardItem = ({name, age, phone}) => {
         </div>
     )
 };
->>>>>>> 65bc0e4c50b3df398c5018c51d96976e75d0fd1d
