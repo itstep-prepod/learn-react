@@ -1,34 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import { data } from "./data";
 import { CardItem } from "./CardItem";
 
 
 export const App = () => {
-    // const [person] = data;
-    // const {name, age, phone} = person
+    const [persons, setPersons] = useState(data); 
 
-    const [persons, setPersons] = useState(data);
 
-    // setPersons([])
-   const onDeletePerson = (personId) => {
-       setPersons( (prevPersons) => {
-          return prevPersons.filter((person) => {
-            if(person.id !== personId) {
-              return true;
-            } else {
-              return false;
-            }
-            
-          })
-       })
-   };
+    const onDeletePerson = (personId) => {
+        // TODO дописать логику удаления, и укоротить код
+        setPersons((prevPersons) => {
+            return prevPersons.filter((person) => {
+                person.id !== personId ? true : false
+            });
+        });
+        if (setPersons === false) {
+          data.splice(personId,1)  
+        }
+    };
+  
 
     return <>
         <div>hello world!</div>
         {/* <CardItem name={name} age={age} phone={phone} /> */}
-        {persons.map((person) => <CardItem {...person} key ={person.id}/>)
-
-        }
+        { persons.map((person) => <CardItem {...person} key={person.id} onDeletePerson={onDeletePerson} />) }
     </>
 };
- 
