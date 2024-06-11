@@ -9,6 +9,5 @@ export const App = () => {
 
     return <>
       <div>hello world!</div>
-      <CardItem name={person.name} age={person.age} phone={person.phone} />
     </>
 }
