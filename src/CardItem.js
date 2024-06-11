@@ -1,9 +1,6 @@
 import React from "react";
 
 
-
-
-
 export const CardItem = ({id, name, age, phone, onDeletePerson}) => {
     return (
         <div>
