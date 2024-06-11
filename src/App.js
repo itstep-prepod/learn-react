@@ -1,13 +1,12 @@
 import React from "react";
-import { data } from "./data";
-import { CardItem } from "./CardItem";
-
-
+import { CardRating } from "./components/card-rating";
+import { CardSale } from "./components/card-sale";
 
 export const App = () => {
-   const[person] = data;
-
-    return <>
-      <div>hello world!</div>
-    </>
-}
+  return (
+    <div>
+      <CardRating />
+      <CardSale />
+    </div>
+  );
+};
