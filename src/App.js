@@ -17,13 +17,15 @@ export const App = () => {
     setPersons((prevPersons) => [...prevPersons, userObj])
   };
 
+
+
   return (
     <>
       <div>hello world!</div>
       <UserForm onUserAdd={onUserAdd}/>
       {/* <CardItem name={name} age={age} phone={phone} /> */}
       {persons.map((person) => (
-        <CardItem {...person} key={person.id} onDeletePerson={onDeletePerson} />
+      <CardItem {...person} key={person.id} onDeletePerson={onDeletePerson} />
       ))}
     </>
   );

@@ -39,3 +39,39 @@ export const UserForm = ({onUserAdd}) => {
     </div>
   );
 };
+
+// Мой вариант решенияб но недаработан. Сверху вариант преподавателя.
+
+// export const UserForm = (onUserAdd) => {
+//   const [userName, setUserName] = useState("");
+//   const [userAge, setUserAge] = useState("");
+//   const [userPhone, setUserPhone] = useState("");
+   
+
+//   const onSubmit = () => {
+//     onUserAdd({id: Math.random(), userName, userAge, userPhone});
+//     setUserName("");
+//     setUserAge("");
+//     setUserPhone("");
+//   };
+
+//     return (<div>
+//     <input type="text" 
+//     name="name" 
+//     value={userName} 
+//     onChange = {(event) => {setUserName(event.target.value)}}/>
+
+//     <input type="text"
+//      name="age"
+//      value={userAge} 
+//      onChange = {(event) => {setUserAge(event.target.value)}}/>
+
+//     <input type="text"
+//      name="phone" 
+//      value={userPhone} 
+//      onChange={(event) => {setUserPhone(event.target.value)}}/>
+
+//     <button onClick={ () => onSubmit() }>Submit</button>
+//     </div>
+//   )
+//  }
