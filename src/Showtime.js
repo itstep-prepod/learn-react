@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { Child } from "./Child";
+import React, {useState} from "react";
+import {Child} from './Child';
 
-export const Shpowtime = () => {
-    const[shouldShow, setShouldShow] = useState(true)
+
+export const Showtime = () => {
+    const [shouldShow, setShouldShow] = useState(true);
 
     const onClick = () => {
-        setShouldShow((show) => !show)
-    }
+        setShouldShow((show) => !show);
+    };
 
-    return(<div>
+    return (<div>
         <button onClick={onClick}>toggle show</button>
         {shouldShow && <Child/>}
-    </div>)
-}
+    </div>);
+};

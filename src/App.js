@@ -1,14 +1,11 @@
 import React from "react";
-// import { Shpowtime } from "./Showtime";
-import { Child, data } from "./Child"; 
-
-
-
+import { Showtime } from "./Showtime";
 
 export const App = () => {
-   const[person] = data;
-
-    return <>
+  return (
+    <div>
       <div>hello world!</div>
-    </>
-}
+      <Showtime />
+    </div>
+  );
+};
