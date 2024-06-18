@@ -1,6 +1,7 @@
 import React from "react";
-import { data } from "./data";
-import { CardItem } from "./CardItem";
+// import { Shpowtime } from "./Showtime";
+import { Child, data } from "./Child"; 
+
 
 
 
