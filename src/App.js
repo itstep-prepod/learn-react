@@ -1,13 +1,13 @@
 import React from "react";
-import { data } from "./data";
-import { CardItem } from "./CardItem";
-
-
+import { News } from "./News";
 
 export const App = () => {
-   const[person] = data;
-
-    return <>
-      <div>hello world!</div>
-    </>
-}
+  return (
+    <div>
+      hello world!
+      <div>
+        <News />
+      </div>
+    </div>
+  );
+};
