@@ -1,30 +1,29 @@
 import React from "react";
-import style from './index.module.css';
-import { Close, ErrorOutline, ChekCercleOutLine, HelpOutline } from '@mui/icon-material';
+import styles from './index.module.css';
+import {Close, ErrorOutline, CheckCircleOutline, HelpOutline} from '@mui/icons-material';
 
-
-
-const Icons = {
-    'alarm': <ErrorOutline/>
-    'success': <ChekCercleOutLine/>
+const icons = {
+    'alarm': <ErrorOutline/>,
+    'success': <CheckCircleOutline/>,
     'info': <HelpOutline/>
-
-}
-
-export const Modal = ({children}) => {
-    return <div className ={style.modal}>{children}</div>
 };
 
 
-Modal.Header = ({text, iconName ='info'}) => {
-    consi icon = Object.keys(icons).includes(iconName)
-    
-    return (<h3 className ={style.header}>
-        <span className ={style.icon}>{icons[iconName]}</span>
-        <span className ={style.headerText}>{text}</span>
-        <span className ={style.closeBth}><Close/></span>
+
+
+
+export const Modal = ({children}) => {
+    return <div className={styles.modal}>{children}</div>
+};
+
+Modal.Header = ({text, iconName}) => {
+    const icon = Object.keys(icons).includes(iconName) ? icons[iconName] : icons['info'];
+
+    return (<h3 className={styles.header}>
+        <span className={styles.icon}> {icon} </span>
+        <span className={styles.headerText}>{text}</span>
+        <span className={styles.closeBtn}><Close/></span>
     </h3>);
 };
 
-// TODO: compound
 
