@@ -12,15 +12,12 @@ export const App = () => {
 
   return (
     <>
-      <Modal>
-        <Modal.Header text={'hi there'} iconName={'alarm'}/>
-        <div>sdasd</div>
-        <div>sdzxcxzczxcv</div>
-        <span>cvxcvxcv</span>
-      </Modal>
+        <Modal isOpen={showError} onClose={() => setShowError(false)}>
+        <Modal.Header text={'Failed to featch'} iconName={'alarm'}/>
+        <span style={{textAlign:'center'}}>Please check</span>
+        </Modal> 
     
-
-      {showError && <div>Error</div>}
+      
       {showSuccess && <div>Success</div>}
       {showModal && <div>Modal</div>}
       <Center>
@@ -28,7 +25,8 @@ export const App = () => {
         <Button
           text="Success"
           view="secondary"
-          onClick={() => setShowSuccess(toggler)}
+          onClick={() => setShowSuccess(toggler)
+          }
         />
         <Button
           text="Modal"
