@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { data } from "./data";
-import { CardItem } from "./CardItem";
-
-
-
-export const App = () => {
-   const[person] = data;
-
-    return <>
-      <div>hello world!</div>
-      <CardItem name={person.name} age={person.age} phone={person.phone} />
-    </>
-}
-=======
 import React, { useState } from "react";
 import { Button } from "./components/button";
 import { Center } from "./components/center";
@@ -55,4 +39,3 @@ export const App = () => {
     </>
   );
 };
->>>>>>> 6b866465fc5c5d5a654178c3e31d3b18da09005a
