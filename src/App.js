@@ -13,7 +13,7 @@ export const App = () => {
   return (
     <>
       <Modal>
-        <Modal.Header text={'hi there'} iconName={'some-icon'}/>
+        <Modal.Header text={'hi there'} iconName={'alarm'}/>
         <div>sdasd</div>
         <div>sdzxcxzczxcv</div>
         <span>cvxcvxcv</span>
