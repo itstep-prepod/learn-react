@@ -3,7 +3,11 @@ import styles from "./index.module.css";
 import { ModalContext } from "./context";
 import {ModalHeader} from './header';
 
-
+// 1. state
+// 2. parent
+// 3. props
+// 4. context
+// 5. force
 
 export const Modal = ({ children, isOpen, onClose }) => {
   if (!isOpen) {
