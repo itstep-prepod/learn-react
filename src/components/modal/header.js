@@ -1,3 +1,4 @@
+import React, { useContecst } from 'react'
 import { Close } from "@mui/icons-material";
 import {
   ErrorOutline,
@@ -24,7 +25,7 @@ export const ModalHeader = ({ text, iconName }) => {
     <div className={styles.header}>
       {icon}
       <span className={styles.headerText}>{text}</span>
-      <Close className={styles.closeBtn} />
+      <Close onClick={onClick} className={styles.closeBtn} />
     </div>
   );
 };
