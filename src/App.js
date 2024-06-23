@@ -12,12 +12,15 @@ export const App = () => {
 
   return (
     <>
+
         <Modal isOpen={showError} onClose={() => setShowError(false)}>
-        <Modal.Header text={'Failed to featch'} iconName={'alarm'}/>
-        <span style={{textAlign:'center'}}>Please check</span>
-        </Modal> 
-    
+          <Modal.Header text={"Failed to fetch"} iconName={"alarm"} />
+          <div style={{ textAlign: "center" }}>
+            Please check your internet connection!
+          </div>
+        </Modal>
       
+
       {showSuccess && <div>Success</div>}
       {showModal && <div>Modal</div>}
       <Center>
