@@ -13,9 +13,14 @@ export const App = () => {
 
   const onErrorModalClose = useCallback(() => setShowError(false), []);
   const onSuccessModalClose = useCallback(() => setShowSuccess(false), []);
+  const onModalClose = useCallback(() => setShowModal(false), []);
 
   return (
     <>
+      <Modal isOpen={showModal} onClose={onModalClose}>
+        <Modal.Header text='Register form'/>
+        <RegisterForm />
+      </Modal>
      
       <Modal isOpen={showError} onClose={onErrorModalClose}>
         <Modal.Header text={"Failed to fetch"} iconName={"alarm"} />
@@ -32,7 +37,6 @@ export const App = () => {
       )}
       {showModal && <div>Modal</div>}
       <Center>
-        <RegisterForm />
         <Button text="Error" onClick={() => setShowError(toggler)} />
         <Button
           text="Success"
