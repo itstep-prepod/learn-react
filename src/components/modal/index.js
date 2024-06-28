@@ -21,9 +21,15 @@ export const Modal = memo(({ children, isOpen, onClose }) => {
   return createPortal(
     <ModalContext.Provider value={value}>
       <div className={styles.modal}>{children}</div>
+<<<<<<< HEAD
     </ModalContext.Provider>,
     document.body
   );
 });
+=======
+    </ModalContext.Provider>
+  ); 
+};
+>>>>>>> 86ea2cf56e5e741169277d2ec5f885f847176911
 
 Modal.Header = ModalHeader;

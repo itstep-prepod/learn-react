@@ -41,7 +41,8 @@ export const App = () => {
         <Button
           text="Success"
           view="secondary"
-          onClick={() => setShowSuccess(toggler)}
+          onClick={() => setShowSuccess(toggler)
+          }
         />
         <Button
           text="Modal"
