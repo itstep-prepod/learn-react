@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Button } from "./components/button";
 import { Center } from "./components/center";
 import { Modal } from "./components/modal";
+import { RegisterForm } from "./components/register-form";
 
 export const App = () => {
   const [showError, setShowError] = useState(false);
@@ -12,9 +13,15 @@ export const App = () => {
 
   const onErrorModalClose = useCallback(() => setShowError(false), []);
   const onSuccessModalClose = useCallback(() => setShowSuccess(false), []);
+  const onModalClose = useCallback(() => setShowModal(false), []);
 
   return (
     <>
+      <Modal isOpen={showModal} onClose={onModalClose}>
+        <Modal.Header text='Register form'/>
+        <RegisterForm />
+      </Modal>
+     
       <Modal isOpen={showError} onClose={onErrorModalClose}>
         <Modal.Header text={"Failed to fetch"} iconName={"alarm"} />
         <div style={{ textAlign: "center" }}>
