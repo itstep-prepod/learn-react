@@ -5,7 +5,7 @@ const initialState = {
     users: [],
     todos: [],
     isLoading: false,
-    error: null
+    error: null,
 };
 
 
@@ -29,7 +29,14 @@ const userSlice = createSlice({
             state.error = action.payload;
             state.isLoading = false;
         });
-        builder.addCase(getTodos.fulfilled, () => {})
+        builder.addCase(getTodos.fulfilled, (state, action) => {
+            state.todos = action.payload;
+            state.isLoading = false;
+        });
+        builder.addCase(getTodos.rejected, (state, action) => {
+            state.todos = action.payload;
+            state.isLoading = false;
+        });
     }
 });
 
