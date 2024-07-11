@@ -2,12 +2,10 @@ import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { Todo } from '../todo';
 import {useSelector} from 'react-redux';
-import {getFilteredByIdTodos} from '../../store/selectors';
+import {getTodos} from '../../store/selectors';
 
 export const TodoList = ({userId}) => {
-    const todos = useSelector((state) => getFilteredByIdTodos(state, userId));
-
-    console.log(todos);
+    const todos = useSelector(getTodos);
 
     return (
         <ListGroup >
