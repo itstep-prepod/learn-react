@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {ENDPOINT} from '../constants/api';
-
+import { ENDPOINT } from "../constants/api";
 
 export const getUsers = createAsyncThunk(
   "getUsers",
@@ -19,13 +18,39 @@ export const getTodos = createAsyncThunk("getTodos", async (_, thunkApi) => {
   return thunkApi.fulfillWithValue(todos);
 });
 
-export const postTodos = createAsyncThunk('postTodos', async (_, thunkApi) => {
-  const  raw = await fetch(`${ENDPOINT}/todos/all`, {
-    method: 'POST',
-    body: JSON.stringify({id: 2})
-  });
+export const postTodo = createAsyncThunk(
+  "postTodo",
+  async (todoText, thunkApi) => {
+    const raw = await fetch(`${ENDPOINT}/todos/all`, {
+      method: "POST",
+      body: JSON.stringify({ todoText }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
 
-  const response = await raw.json();
+    const response = await raw.json();
 
-  return thunkApi.fulfillWithValue(response);
-});
+    if (response.error) {
+      return thunkApi.rejectWithValue(response.error.message);
+    }
+
+    return thunkApi.fulfillWithValue(response);
+  }
+);
+
+export const toggleTodo = createAsyncThunk(
+  "toggleTodo",
+  async (todoId, thunkApi) => {
+    const raw = await fetch(`${ENDPOINT}/todos/${todoId}`, {
+      method: "PATCH",
+      body: JSON.stringify({ todoId }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const response = await raw.json();
+
+    return thunkApi.fulfillWithValue(response);
+  }
+);

@@ -1,5 +1,5 @@
 import { addListener, createSlice } from "@reduxjs/toolkit";
-import {getUsers, getTodos, postTodos} from './async-action';
+import {getUsers, getTodos, postTodo, toggleTodo } from './async-action';
 
 const initialState = {
     users: [],
@@ -38,8 +38,14 @@ const userSlice = createSlice({
             state.todos = action.payload;
             state.isLoading = false;
         });
-        builder.addCase(postTodos.fulfilled, (state, action) => {
-            state.hren = action.payload;
+        builder.addCase(postTodo.fulfilled, (state, action) => {
+            state.todos.push(action.payload);
+        });
+        builder.addCase(postTodo.rejected, (state, action) => {
+            state.error = action.payload;
+        });
+        builder.addCase(toggleTodo.fulfilled, (state, action) => {
+            console.log('id', action.payload);
         })
     }
 });
